@@ -1,0 +1,60 @@
+ - Agenda de Medicina 
+    scheduled visits (Estudios)
+ - Recordatorios / Remis?
+ - medication reminders , como se sienten
+ - Log de como se sienten en cualquier momento
+ - Contactar al medico, --> Confianza
+ - Referencia de otros pacientes 
+ - Etapa del Trail (fases)
+ - Modo Vacaciones
+
+MENUES
+My Daily Routine
+medication reminders
+scheduled visits
+
+Objetivo
+information, personal interaction, efficiency, and comfort.
+
+
+Fases:
+http://clinicaltrials.gov/ct2/help/glossary/phase
+
+
+
+
+--------------------------------
+
+Chartjs
+
+Radar
+http://www.chartjs.org/docs/
+
+
+http://jsfiddle.net/kaatula/j3FJf/1/
+
+http://jsfiddle.net/7ktug/2/
+
+
+
+--------------------------------
+App Backgrounds
+
+http://subtlepatterns.com/thumbnail-view/page/2/
+
+
+--------------------------------
+Ipad/ Iphone Simulator
+
+
+http://ipadpeek.com/
+http://www.responsimulator.com/
+
+
+----------------------------------
+Symptoms
+
+Graphical Symptoms
+http://www.medicinenet.com/symptoms_and_signs/article.htm#symptomsView
+
+http://www.mayoclinic.org/symptom-checker/select-symptom/ITT-20009075

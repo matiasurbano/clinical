@@ -1,0 +1,176 @@
+{% extends 'user_layout.html' %}
+
+
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+
+{% block profile %}
+    <img class="ui avatar image" src="{{pacient.profile_img}}">
+
+    <strong class="profileName">{{ pacient.firstname + ' ' + pacient.lastname }}</strong>
+{% endblock profile %}
+
+{% block menu %}
+
+    <ul>
+        <li><a href="/pacient"><i class="big home icon"></i><span> Home </span> </a></li>
+        <li><a href="/pacient/timeline"><i class="big calendar icon"></i><span> Schedule  </span> </a></li>
+        <li><a href="/pacient/messages"><i class="big mail icon"></i><span> Messages </span> </a></li>
+    </ul>
+
+{% endblock menu %}
+
+
+{% block content %}
+
+    <!-- ############ Status ############ -->
+    <h2 class="ui header">
+        <i class="bullhorn icon"></i>
+        Status
+    </h2>
+    <div class="ui page grid overview segment">
+      <div class="wide column">
+        <div class="ui one column stackable divided grid">
+          <div class="column">
+              <form method="post"  action="/status/{{pacient.username}}" class="ui form segment">
+                <div class="two fields">
+                  <div class="field">
+                    <div class="ui fluid selection dropdown">
+                        <input type="hidden" name="status">
+                        <div class="text">Status</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu ui transition hidden">
+                            <div class="item"><i class="smile icon"></i>Happy</div>
+                            <div class="item"><i class="meh icon"></i>Tired</div>
+                            <div class="item"><i class="frown icon"></i>Sad</div>
+                            <div class="item"><i class="thumbs down icon"></i>Depressed</div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="field">
+                    <div class="ui fluid selection dropdown">
+                        <input type="hidden" name="symptom">
+                        <div class="text">Symptom</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu ui transition hidden">
+                            <div class="item" data-value="Abdominal pain">Abdominal pain</div> 
+                            <div class="item" data-value="Blood in stool">Blood in stool</div> 
+                            <div class="item" data-value="Abdominal pain">Chest pain</div> 
+                            <div class="item" data-value="Constipation">Constipation</div> 
+                            <div class="item" data-value="Cough">Cough</div> 
+                            <div class="item" data-value="Diarrhea">Diarrhea</div> 
+                            <div class="item" data-value="Difficulty swallowing">Difficulty swallowing</div> 
+                            <div class="item" data-value="Dizziness">Dizziness</div> 
+                            <div class="item" data-value="Eye discomfort and redness">Eye discomfort and redness</div> 
+                            <div class="item" data-value="Foot pain or ankle pain">Foot pain or ankle pain</div> 
+                            <div class="item" data-value="Foot swelling or leg swelling">Foot swelling or leg swelling</div> 
+                            <div class="item" data-value="Headaches">Headaches</div> 
+                            <div class="item" data-value="Heart palpitations">Heart palpitations</div> 
+                            <div class="item" data-value="Hip pain">Hip pain</div> 
+                            <div class="item" data-value="Knee pain">Knee pain</div> 
+                            <div class="item" data-value="Low back pain">Low back pain</div> 
+                            <div class="item" data-value="Nasal congestion">Nasal congestion</div> 
+                            <div class="item" data-value="Nausea or vomiting">Nausea or vomiting</div> 
+                            <div class="item" data-value="Neck pain">Neck pain</div> 
+                            <div class="item" data-value="Numbness or tingling in hands">Numbness or tingling in hands</div> 
+                            <div class="item" data-value="Pelvic pain: female">Pelvic pain: female</div> 
+                            <div class="item" data-value="Pelvic pain: male">Pelvic pain: male</div> 
+                            <div class="item" data-value="Shortness of breath">Shortness of breath</div> 
+                            <div class="item" data-value="Shoulder pain">Shoulder pain</div> 
+                            <div class="item" data-value="Sore throat">Sore throat</div> 
+                            <div class="item" data-value="Urinary problems">Urinary problems</div> 
+                            <div class="item" data-value="Vision problems">Vision problems</div> 
+                            <div class="item" data-value="Wheezing">Wheezing</div>                  
+                        </div>
+                    </div>
+                  </div>
+                </div>
+               <div class="field">
+                  <textarea id="statusdescription" name="description" type="text"></textarea>
+               </div>
+                <div class="ui error message"></div>
+                <input type="submit" value="Submit" class="ui blue submit button">
+              </form>   
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ############ Status ############ -->
+
+    <div class="ui divider"></div>
+
+    <!-- ############ Timeline ############ -->
+    <h2 class="ui header">
+        <i class="calendar icon"></i>
+        Today's schedule
+    </h2>
+    <div id="panel-timeline" class="ui relaxed stackable grid">
+        <div  class="wide column">
+            {% if (activities.length > 0) %}
+            <div id="timeline">
+                <div class="ui timeline">
+                    {% for activity in activities %}
+                    {% if (activity.new_day) %}
+                    <div class="ui teal ribbon label">
+                        {{ activity.date|date('D m-d-Y') }}
+                    </div>
+                    {% endif %}
+
+                    <div class="milestone event">
+                        <div class="marker" data-content="{{ activity.date|date('m-d-Y') }}">
+        
+                        {% if (activity.activity_type === "treatment") %}
+                            <i class="doctor icon circular doctor"></i>
+                        {% endif %}
+                        {% if (activity.activity_type === "transport") %}
+                            <i class="road icon circular doctor"></i>
+                        {% endif %}
+                        {% if (activity.activity_type === "medicine") %}
+                            <i class="medkit icon circular doctor"></i>
+                        {% endif %}
+
+                        </div>
+                        <strong>
+                            {{ activity.time }}
+                        </strong>
+                        <strong class="ui header top">
+                            {{ activity.title }}
+                        </strong>
+                        <div class="bottom attached no-padding basic shadowless partitioned ui segment">
+                            <div class="overview ui segment">
+                                <div class="content">
+                                    <p> <strong>Description:</strong>
+                                        {{ activity.description }}
+                                    </p>
+                                    <p> <strong>Requisites:</strong>
+                                        {{ activity.requisites }}
+                                    </p>
+                                    <a href="/activities/done/{{activity._id}}" class="ui button">Mark DONE</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% else %}
+                <h3> There aren't activities for today.</h3> 
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- ############ Timeline ############ -->
+{% endblock content %}
+
+{% block modals %}
+
+{% endblock modals %}
+
+
+{% block scripts %}
+    <script src="/app/pacient.js"></script>
+{% endblock scripts %}

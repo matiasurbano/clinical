@@ -1,0 +1,61 @@
+{% extends 'main.html' %}
+
+
+{% block title %}
+  Welcome
+{% endblock title %}
+
+
+{% block content %}
+  <div class="wide column" style="margin-top:20px;">
+    <div class="ui one column center aligned stackable divided grid">
+      <div class="column">
+          <img src="/img/logo.png" width="250px">
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="dark stripe">
+  <div class="ui page grid">
+    <div class="column">
+      <h2 class="ui huge inverted center aligned icon header">
+        <i class="circular emphasized inverted teal doctor outline icon"></i>
+      </h2>
+      <div class="ui inverted horizontal section divider">
+        <i class="circular icon"></i>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="ui page grid overview segment">
+  <div class="wide column">
+    <div class="ui two column center aligned divided grid">
+      <div class="column">
+        <div class="ui icon header">
+          <i class="circular sign in icon"></i>
+        </div>
+        <p><a class="ui teal right labeled icon button" href="/prelogin">Login <i class="right long arrow icon"></i></a></p>
+      </div>
+      
+      <div class="column">
+        <div class="ui icon header">
+          <i class="circular user link icon"></i>
+        </div>
+        <p><a class="ui teal right labeled icon button" href="/signup">Signup <i class="right long arrow icon"></i></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock scripts %}

@@ -1,0 +1,276 @@
+{% extends 'user_layout.html' %}
+
+
+{% block title %}
+	{{title}}
+{% endblock title %}
+
+
+{% block profile %}
+  <img class="ui avatar image" src="{{doctor.profile_img}}">
+
+
+	<strong class="profileName">{{ doctor.firstname + ' ' + doctor.lastname }}</strong>
+{% endblock profile %}
+
+{% block menu %}
+
+  <ul>
+      <li><a href="/doctor"><i class="big home icon"></i><span> Home </span> </a></li>
+      <li><a href="/doctor/messages"><i class="big mail icon"></i><span> Messages </span> </a></li>
+  </ul>
+
+{% endblock menu %}
+
+
+{% block content %}
+
+
+
+
+      <div id="btnAddActivity" class="ui primary fluid test button" style="margin-top:20px;">Add Activity</div>
+
+ <!-- ############ Pacient List ############ -->
+  <h2 class="ui header">
+      <i class="text file icon"></i>
+      The Progress Log
+  </h2>
+
+  <div class="ui page grid overview segment">
+    <div class="wide column">
+      <div class="ui one column stackable divided grid">
+        <div class="column">
+
+
+          <div class="column"><div class="text example">
+            <div class="ui items">
+
+              {% for pacient in pacients %}
+              <div class="item" style=" min-height: 200px;  width: 95%;">
+                <div class="content">
+                  <div class="name">{{ pacient.firstname + ' ' + pacient.lastname }}</div>
+                  <div class="description">At work </div>
+                </div>
+                <div class="extra">
+                  <div class="tiny icon ui buttons">
+                    <div class="ui button"><i class="tasks right icon"></i></div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  <div class="ui relaxed stackable grid">
+  <div class="fourteen wide middle column"><div class="text example">
+    <div class="ui items">
+
+      {% for pacient in pacients %}
+      <div class="item" style=" min-height: 200px;  width: 90%;">
+        <div class="content">
+          <div class="name">{{ pacient.firstname + ' ' + pacient.lastname }}</div>
+          <div class="description">At work </div>
+        </div>
+        <div class="extra">
+          <div class="tiny icon ui buttons">
+            <div class="ui button"><i class="tasks right icon"></i></div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+    </div>
+  </div>
+</div> -->
+
+ <!-- ############ Pacient List############ -->
+
+
+
+ <!-- ############ ADD ACTIVITY FORM ############ -->
+
+
+  <div id="addActivity" class="ui modal transition hidden">
+   <form id="addActivityForm" method="post" action="/doctor/addactivity">
+    <div class="ui error form segment hidden">
+
+        <div class="field">
+          <label>Pacient</label> 
+          <div id="pacientdropdown" class="ui selection dropdown">
+            <input type="hidden" name="pacient">
+            <div class="default text">Select Pacient</div>
+            <i class="dropdown icon"></i>
+            <div class="menu ui transition hidden">
+                {% for pacient in pacients %}
+                  <div class="item" data-value="{{pacient.username}}">
+                      {{pacient.firstname + ' ' + pacient.lastname}}
+                  </div>
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Type</label> 
+          <div id="typedropdown" class="ui selection dropdown">
+            <input type="hidden" name="activity_type">
+            <div class="default text">Type</div>
+            <i class="dropdown icon"></i>
+            <div class="menu ui transition hidden">
+                <div class="item" data-value="medicaltreatment">Medical Treatment</div>
+                <div class="item" data-value="medicine">Medicine</div>
+                <div class="item" data-value="transport">Transport</div>
+            </div>
+          </div>
+        </div>
+
+
+      <div class="two fields">
+        <div class="field">
+          <label>Date</label>
+          <input name="date" class="datepicker" placeholder="Date" type="text">
+        </div> 
+        <div class="field">
+          <label>Time</label>
+          <input name="time" class="timepicker" placeholder="Time" type="text">
+        </div> 
+      </div> 
+
+      <div class="field" style="display:none;">
+          <div class="ui checkbox">
+            <input name="weeklyrepeat" type="checkbox" >
+            <label>Weekly Repeat</label>
+          </div>
+      </div> 
+
+      <div id="weeklyrepeat" style="display:none;">
+        <div class="field">
+          <label>Due Date</label>
+          <input name="duedate" class="datepicker" placeholder="Date" type="text">
+        </div> 
+        <div class="four fields">
+          <div class="field">
+
+            <div class="ui checkbox">
+              <input name="week_sunday" type="checkbox" >
+              <label>Sun</label>
+            </div>
+
+          </div> 
+          <div class="field">
+
+            <div class="ui checkbox">
+              <input name="week_monday" type="checkbox" >
+              <label>Mon</label>
+            </div>
+
+          </div> 
+          <div class="field">
+
+            <div class="ui checkbox">
+              <input name="week_tuesday" type="checkbox" >
+              <label>Tus</label>
+            </div>
+
+          </div> 
+          <div class="field">
+
+            <div class="ui checkbox">
+              <input name="week_wednesday" type="checkbox" >
+              <label>Wed</label>
+            </div>
+
+          </div> 
+        </div>
+        <div class="four fields">
+          <div class="field">
+
+            <div class="ui checkbox">
+              <input name="week_thursday" type="checkbox" >
+              <label>Thu</label>
+            </div>
+
+          </div> 
+          <div class="field">
+
+            <div class="ui checkbox">
+              <input name="week_friday" type="checkbox" >
+              <label>Fri</label>
+            </div>
+
+          </div> 
+          <div class="field">
+
+            <div class="ui checkbox">
+              <input name="week_saturday" type="checkbox" >
+              <label>Sat</label>
+            </div>
+
+          </div> 
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Title</label>
+        <input name="title" placeholder="Treatment Title" type="text">
+      </div> 
+      <div class="field">
+        <label>Description</label>
+        <textarea name="description" type="text"></textarea>
+      </div> 
+
+
+
+      <div class="medicaltreatment_box">
+          <div class="field">
+            <label>Location</label>
+            <input name="location"  placeholder="" type="text">
+          </div> 
+      </div>
+
+       <div class="medicine_box">
+          <div class="field">
+            <label>Requisites</label>
+            <input name="requisites" placeholder="All pacient need to know before Medical Treatment." type="text">
+          </div> 
+      </div>       
+
+
+       <div class="transport_box">
+          <div class="field">
+            <label>PickUp From</label>
+            <input name="pickupfrom" placeholder="Location" type="text">
+          </div> 
+      </div>     
+
+      <div class="actions">
+        <div class="ui black button">
+          Cancel
+        </div>
+        <div class="ui positive right labeled icon button">
+          Add 
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+  <!-- ############ ADD ACTIVITY FORM ############ -->
+
+
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="/app/doctor.js"></script>
+{% endblock scripts %}

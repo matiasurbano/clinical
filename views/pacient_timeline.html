@@ -1,0 +1,100 @@
+{% extends 'user_layout.html' %}
+
+
+{% block title %}
+    {{title}}
+{% endblock title %}
+
+
+{% block profile %}
+    <img class="ui avatar image" src="{{pacient.profile_img}}">
+
+    <strong class="profileName">{{ pacient.firstname + ' ' + pacient.lastname }}</strong>
+{% endblock profile %}
+
+{% block menu %}
+
+    <ul>
+        <li><a href="/pacient"><i class="big home icon"></i><span> Home </span> </a></li>
+        <li><a href="/pacient/timeline"><i class="big calendar icon"></i><span> Schedule  </span> </a></li>
+        <li><a href="/pacient/messages"><i class="big mail icon"></i><span> Messages </span> </a></li>
+    </ul>
+
+{% endblock menu %}
+
+
+{% block content %}
+
+    <!-- ############ Timeline ############ -->
+    <h2 class="ui header">
+        <i class="calendar icon"></i>
+        Full's schedule
+    </h2>
+    <div id="panel-timeline" class="ui relaxed stackable grid">
+        <div  class="wide column">
+            {% if (activities.length > 0) %}
+            <div id="timeline">
+                <div class="ui timeline">
+                    {% for activity in activities %}
+                    {% if (activity.new_day) %}
+                    <div class="ui teal ribbon label">
+                        {{ activity.date|date('D m-d-Y') }}
+                    </div>
+                    {% endif %}
+
+                    <div class="milestone event">
+                        <div class="marker" data-content="{{ activity.date|date('m-d-Y') }}">
+        
+                        {% if (activity.activity_type === "treatment") %}
+                            <i class="doctor icon circular doctor"></i>
+                        {% endif %}
+                        {% if (activity.activity_type === "transport") %}
+                            <i class="road icon circular doctor"></i>
+                        {% endif %}
+                        {% if (activity.activity_type === "medicine") %}
+                            <i class="medkit icon circular doctor"></i>
+                        {% endif %}
+
+                        </div>
+                        <strong>
+                            {{ activity.time }}
+                        </strong>
+                        <strong class="ui header top">
+                            {{ activity.title }}
+                        </strong>
+                        <div class="bottom attached no-padding basic shadowless partitioned ui segment">
+                            <div class="overview ui segment">
+                                <div class="content">
+                                    <p> <strong>Description:</strong>
+                                        {{ activity.description }}
+                                    </p>
+                                    <p> <strong>Requisites:</strong>
+                                        {{ activity.requisites }}
+                                    </p>
+                                    <a href="/activities/done/{{activity._id}}" class="ui button">Mark DONE</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% else %}
+                <h3> There aren't activities for today.</h3> 
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- ############ Timeline ############ -->
+{% endblock content %}
+
+{% block modals %}
+
+{% endblock modals %}
+
+
+{% block scripts %}
+    <script src="/app/pacient.js"></script>
+{% endblock scripts %}

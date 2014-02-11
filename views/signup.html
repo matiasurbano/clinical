@@ -1,0 +1,73 @@
+{% extends 'main.html' %}
+
+
+{% block title %}
+  Sign Up
+{% endblock title %}
+
+
+{% block content %}
+
+
+
+<div class="ui page grid overview segment" style="margin-top:20px;">
+  <div class="wide column">
+    <div class="ui one column stackable divided grid">
+      <div class="column">
+          <form method="post" class="ui form segment">
+            <div class="two fields">
+              <div class="field">
+                <label>Full Name</label>
+                <input name="firstname" placeholder="First Name" type="text">
+              </div>
+              <div class="field">
+                <label>Last Name</label>
+                <input  name="lastname" placeholder="Last Name" type="text">
+              </div>
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input name="email" placeholder="Email" type="text">
+            </div>
+            <div class="field">
+              <label>Username</label>
+              <input name="username" placeholder="Username" type="text">
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input name="password" type="password">
+            </div>
+            <div class="field">
+              <label>Verify</label>
+              <input name="verify" type="password">
+            </div>
+            <div class="inline field">
+              <div class="ui selection dropdown">
+                <input type="hidden" name="doctor">
+                <div class="default text">Doctor</div>
+                <i class="dropdown icon"></i>
+                <div class="menu ui transition hidden">
+                  {% for doctor in doctors %}
+                  <div class="item" data-value="{{doctor.username}}">{{doctor.username}}</div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="ui error message"></div>
+            <input type="submit" value="Submit" class="ui blue submit button" />
+          </form>   
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="/app/signup.js"></script>
+{% endblock scripts %}
+
+

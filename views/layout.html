@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clinicalapp">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="IE=edge" />
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-touch-fullscreen" content="yes">
+
+        <!-- Semantic UI -->
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+
+
+        <link href="/css/semantic.min.css" rel="stylesheet" type="text/css" >
+        <link href="/css/main.css" rel="stylesheet" type="text/css" >
+        <link href="/css/snap.css" rel="stylesheet" type="text/css" >
+        <link href="/css/demo.css" rel="stylesheet" type="text/css" >
+
+        <!-- Date and Time Picker -->
+        <link rel="stylesheet" href="/css/default.css" id="theme_base">
+        <link rel="stylesheet" href="/css/default.date.css" id="theme_date">
+        <link rel="stylesheet" href="/css/default.time.css" id="theme_time">
+
+        <!-- Select2 -->
+        <link rel="stylesheet" href="/css/select2.css" id="theme_base">
+
+        <!-- Timeline -->
+        <link href="/css/timeline-datauri.css" media="screen" rel="stylesheet" type="text/css">
+
+        <title>{% block title %}{% endblock title %}</title>
+    </head>
+    <body>
+        <div class="snap-drawers">
+            <div class="snap-drawer-left">                
+                    <div id="social-profile" class="demo-social">
+                        {% block profile %}
+
+
+                        {% endblock profile %}
+                    </div>
+                    <div class="snap-drawer">
+
+                       {% block menu %}
+
+
+                       {% endblock menu %}
+
+                        <ul>
+                            <li>
+                                <a href="/logout"><i class="big sign out icon"></i>
+                                    <span> Logout </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="snap-drawer snap-drawer-right"></div>
+        </div>
+
+       <div id="content" class="snap-content">
+            <div id="toolbar">
+                <a href="#" id="open-left">
+                    <i class="teal reorder icon"></i>
+                </a>
+            </div>
+
+          <div class="ui page grid stackable segment">
+                <div class="ui stackable grid">
+                    {% block content %}{% endblock content %}
+                </div>
+          </div>
+        </div>
+
+        {% block modals %}{% endblock modals %}
+
+        <script src="/javascript/jquery-1.9.1.js" type="text/javascript"></script>
+        <script src="/javascript/semantic.js" type="text/javascript"></script>
+        <script src="/javascript/snap.js" type="text/javascript"></script>
+
+        <!-- Date and Time Picker -->
+        <script src="/javascript/picker.js" type="text/javascript"></script>
+        <script src="/javascript/picker.date.js"></script>
+        <script src="/javascript/picker.time.js"></script>
+
+        <!-- Select2 -->
+        <script src="/javascript/select2.min.js"></script>
+
+        <script src="/app/main.js"></script>
+        {% block scripts %}{% endblock scripts %}
+
+    </body>
+</html>

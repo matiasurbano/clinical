@@ -1,0 +1,72 @@
+@font-face {
+  src: local("☺"),
+    url("/fonts/basic.icons.woff") format("woff"),
+    url("/fonts/icons.woff") format("woff");
+  }
+
+
+.ui.dimmed.dimmable>.ui.animating.dimmer, .ui.dimmed.dimmable>.ui.visible.dimmer, .ui.active.dimmer {
+	overflow-y: scroll;
+}
+
+.ui.form textarea{
+	font-size: 1em;
+}
+
+#timeline{
+    padding: 10px 30px;
+}
+
+.ui.ribbon.label {
+	left: -1rem;
+	top: -2rem;
+}
+
+.ui.segment{
+	background-color: transparent;
+}
+
+h1.ui.header{
+	padding-top: 15px;
+}
+
+#content {
+	/*padding: 5px 30px;*/
+	background-image: url("/img/brillant.png");
+
+	/*
+	background-image: url(http://subtlepatterns.com/patterns/brillant.png);
+	background-image: url(http://subtlepatterns.com/patterns/greyzz.png);
+	background-image: url(http://subtlepatterns.com/patterns/subtle_dots.png);
+	background-image: url(http://subtlepatterns.com/patterns/debut_light.png);
+	background-image: url(http://subtlepatterns.com/patterns/white_wall_hash.png);
+	background-image: url(http://subtlepatterns.com/patterns/cream_pixels.png);
+	background-image: url(http://subtlepatterns.com/patterns/cream_dust.png);
+
+
+	*/
+
+}
+
+#mainbody{
+	background-image:url("/img/brillant.png");
+}
+
+#social-profile{
+	padding: 25px;
+}
+
+textarea#statusdescription{
+	line-height: 1.33;
+	min-height: 8em;
+	height: 7em;
+}
+
+.ui.dropdown>.text {
+	font-size: 0.9em;
+}
+
+#timeline .event {
+	padding-left: 25px;
+}
+

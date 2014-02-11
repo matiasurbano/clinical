@@ -1,0 +1,28 @@
+User 
+    name: String
+    email: String
+    username: String
+    hashed_password: String
+    provider: String
+    salt: String
+    facebook: {}
+    bornDate: Date,
+    isDoctor: {}
+    status: String,
+    messages: {
+            date:  { type: Date, default: Date.now },
+            message: String,
+            from: String
+    }
+
+
+Activity
+    username: String,
+    type: String,
+    dates: [
+        {
+            date: Date,
+            type: String,
+            description: String,
+        }
+    ]

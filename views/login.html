@@ -1,0 +1,47 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+
+<div class="ui page grid overview segment" style="margin-top:50px;">
+  <div class="wide">
+    <div class="ui one column stackable divided grid">
+      <div class="column">
+          <div id="login" > 
+            <form action="/login" method="POST" class="ui form segment">
+              <div class="field">
+                <label>Username</label>
+                <div class="ui left labeled icon input">
+                  <input type="text" name="username" placeholder="Username" value="{{username}}">
+                  <i class="user icon"></i>
+                  <div class="ui corner label">
+                    <i class="icon asterisk"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="field">
+                <label>Password</label>
+                <div class="ui left labeled icon input">
+                  <input type="password" name="password" placeholder="Password" value="{{password}}">
+                  <i class="lock icon"></i>
+                  <div class="ui corner label">
+                    <i class="icon asterisk"></i>
+                  </div>
+                </div>
+              </div>
+              <div class="ui error message"></div>
+              <input type="submit" value="Login" class="ui blue submit button" />
+            </form>
+          </div>
+      </div>      
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="/app/login.js"></script>
+{% endblock scripts %}

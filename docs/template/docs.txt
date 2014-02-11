@@ -1,0 +1,8 @@
+Template Docs
+-------------
+
+Calendar / Datepicket
+
+http://amsul.ca/pickadate.js/index.htm
+or
+http://mobipick.sustainablepace.net/demo-advanced.html

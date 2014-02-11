@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+
+
+{% block title %}
+  Sample Users
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="ui page grid overview segment" style="margin-top:20px;">
+
+  <div class="wide column">
+
+    <h2 class="ui header">
+      <i class="circular emphasized info icon"></i>
+      <div class="content">
+         Sample Data
+        <div class="sub header">
+          Users information are for demo only.
+        </div>
+      </div>
+    </h2>
+    <div class="ui inverted horizontal section divider">
+      <i class="circular icon"></i>
+    </div>
+    <div class="ui two column center aligned grid">
+      <div class="column">
+        <div class="ui icon header">
+          <img class="circular small ui image" src="/img/doctor-avatar.jpg">
+        </div>
+        <p><a class="ui teal small right labeled icon button" href="/prelogin/rwalker">Doctor 
+          <i class="right long arrow icon"></i> 
+
+        </a></p>
+      </div>
+      
+      <div class="column">
+        <div class="ui icon header">
+          <img class="circular small ui image" src="/img/patient-avatar.png">
+        </div>
+        <p><a class="ui teal small right labeled icon button" href="/prelogin/mhart">Patient <i class="right long arrow icon"></i></a></p>
+      </div>
+    </div>
+    <br> 
+    <br> 
+    <div class="ui horizontal divider">
+      Or
+    </div>
+    <div class="ui one column center stackable aligned divided grid">
+      <div class="column">
+
+        <p><a class="ui teal right labeled icon button" href="/Login">Login <i class="right long arrow icon"></i></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+{% block scripts %}
+
+{% endblock scripts %}

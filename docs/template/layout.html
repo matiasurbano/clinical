@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <!-- Site Properities -->
+  <title>Template Layout</title>
+
+  
+  <script src="javascript/jquery-1.9.1.js" type="text/javascript"></script>
+  <script src="javascript/semantic.js"></script>
+
+
+  <!-- Date and Time Picker -->
+  <script src="javascript/picker.js" type="text/javascript"></script>
+  <script src="javascript/picker.date.js"></script>
+  <script src="javascript/picker.time.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="layout.css">
+
+
+
+
+  <!-- Date and Time Picker -->
+  <link rel="stylesheet" href="css/default.css" id="theme_base">
+  <link rel="stylesheet" href="css/default.date.css" id="theme_date">
+  <link rel="stylesheet" href="css/default.time.css" id="theme_time">
+
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+  <link href="css/timeline-datauri.css" media="screen" rel="stylesheet" type="text/css">
+  <!-- <link href="css/semantic-datauri.css" media="screen" rel="stylesheet" type="text/css"> -->
+
+
+  <link rel="stylesheet" type="text/css" href="layout.css">
+</head>
+<body>
+
+  <!-- ############ DOCTOR VIEW ############ -->
+  <div class="ui page grid stackable relaxed segment">
+  <div class="ui relaxed stackable grid">
+    <div class="eight wide right column">
+      <div class="ui grid segment">
+        <div class="three wide left column">
+          <img class="rounded ui small image" src="http://semantic-ui.com/images/demo/photo2.jpg">
+        </div>
+        <div class="eight wide middle column">
+          <h1 class="ui header">Richar Walker</h1>
+                        <input class="datepicker" placeholder="Time" type="text">
+        </div>
+        <div class="five  wide right column">
+          <div class="ui compact menu">
+            <a class="item">
+              <i class="icon mail"></i><div class="floating ui red label">15</div>
+            </a>
+            <a class="item">
+              <i class="icon flag"></i><div class="floating ui teal label">8</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="ui divider"></div>
+      <div class="ui basic button">Save</div>
+      <div class="ui basic button">Delete</div>
+      <div id="btnTestModal" class="ui primary test button">Launch modal</div>
+      <div id="btnAddActivity" class="ui primary test button">Add Activity</div>
+    </div>
+    <div class="eight wide middle column">
+      <h2 class="ui header">
+        <i class="inbox icon"></i>
+        Inbox
+      </h2>
+      <div class="ui tabular filter menu">
+        <a class="item active" data-tab="unread">Unread</a>
+        <a class="item" data-tab="saved">Saved</a>
+        <a class="item" data-tab="all">All</a>
+      </div>
+      <div class="ui divided inbox selection list tab active" data-tab="unread">
+        <a class="active item">
+          <div class="left floated ui star rating"><i class="icon"></i></div>
+          <div class="right floated date">Sep 14, 2013</div>
+          <div class="description">Weekly Webcomic Wrapup fought the law, and the law won</div>
+        </a>
+        <a class="item">
+          <div class="ui grid">
+           <div class="two wide middle column">
+             <img class="ui avatar image" src="http://semantic-ui.com/images/demo/photo2.jpg">
+           </div>
+           <div class="twelve wide middle column">
+            <strong>Dog Doggington</strong>
+            <div class="description">Weekly Webcomic Wrapup fought the law, and the law won</div>
+            <div class="date">Sep 10, 2013  14:25</div>
+          </div>
+          <div class="two wide middle column">
+            <div class="ui icon buttons right floated ">
+              <div class="ui tiny button">
+                <i class="reply mail icon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a class="item">
+        <div class="left floated ui star rating"><i class="icon"></i></div>
+        <div class="right floated date">Sep 10, 2013</div>
+        <div class="description">Dogs colony in Antarctica</div>
+      </a>
+      <a class="item">
+        <div class="left floated ui star rating"><i class="icon"></i></div>
+        <div class="right floated date">Sep 09, 2013</div>
+        <div class="description">Famous dog whisperer Chakotay dies today at 104</div>
+      </a>
+      <a class="item">
+        <div class="left floated ui star rating"><i class="icon"></i></div>
+        <div class="right floated date">Sep 07, 2013</div>
+        <div class="description">Top 10 Things to Know about Labradoodles</div>
+      </a>
+      <a class="item">
+        <div class="left floated ui star rating"><i class="icon"></i></div>
+        <div class="right floated date">Sep 05, 2013</div>
+        <div class="description">Study shows children enjoy the company of animals</div>
+      </a>
+    </div>
+    <div class="ui divided inbox selection list tab" data-tab="saved">
+      <a class="item">
+        <div class="left floated ui star rating"><i class="icon"></i></div>
+        <div class="right floated date">Sep 14, 2013</div>
+        <div class="description">Your favorite saved article</div>
+      </a>
+      <a class="item">
+        <div class="left floated ui star rating"><i class="icon"></i></div>
+        <div class="right floated date">Sep 14, 2013</div>
+        <div class="description">Your favorite saved article</div>
+      </a>
+      <a class="item">
+        <div class="left floated ui star rating"><i class="icon"></i></div>
+        <div class="right floated date">Sep 14, 2013</div>
+        <div class="description">Your favorite saved article</div>
+      </a>
+    </div>
+    <div class="ui divided inbox selection list tab" data-tab="all">
+      <a class="item">
+        <div class="left floated ui star rating"><i class="link icon"></i></div>
+        <div class="right floated date">Sep 14, 2013</div>
+        <div class="description">There turns out there is only one article under all.</div>
+      </a>
+    </div>
+
+  </div>
+
+  <div class="ui relaxed stackable grid">
+    <div class="wide middle column">
+
+      <!-- <div class="ui items" style="display: block;">
+        <div class="item">
+          <div class="image">
+            <img class="rounded ui small image" src="http://semantic-ui.com/images/demo/photo2.jpg">
+            <a class="like ui corner label">
+              <i class="like icon"></i>
+            </a>
+          </div>
+          <div class="content">
+            <div class="name">Cute Dog</div>
+            <p class="description">This dog has some things going for it. Its pretty cute and looks like it'd be fun to cuddle up with.</p>
+            <div class="extra">
+              199 votes
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img class="rounded ui small image" src="http://semantic-ui.com/images/demo/photo2.jpg">
+            <a class="like ui corner label">
+              <i class="like icon"></i>
+            </a>
+          </div>
+          <div class="content">
+            <div class="meta">5 days ago</div>
+            <div class="name">Faithful Dog</div>
+            <p class="description">Sometimes its more important to have a dog you know you can trust. But not every dog is trustworthy, you can tell by looking at its smile.</p>
+            <div class="extra">
+              311 votes
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="image">
+            <img class="rounded ui small image" src="http://semantic-ui.com/images/demo/photo2.jpg">
+            <a class="like ui corner label">
+              <i class="like icon"></i>
+            </a>
+          </div>
+          <div class="content">
+            <div class="name">Silly Dog</div>
+            <p class="description">Silly dogs can be quite fun to have as companions. You never know what kind of ridiculous thing they will do.</p>
+            <div class="extra">
+              522 votes
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>      
+  </div>
+
+
+
+</div>
+
+
+
+<!-- ############ Pacient LIST VIEW ############ -->
+<div class="ui relaxed stackable grid">
+  <div class="fourteen wide middle column"><div class="text example"><i class="icon code"></i>
+    <div class="ui items" style="
+    /* height: 23px; */
+    ">
+    <div class="item" style="
+    min-height: 200px;
+    ">
+    <div class="content">
+      <div class="meta">Phase 1</div>
+      <div class="name">Sara Morgan</div>
+      <div class="description">At work </div>
+    </div>
+    <div class="extra">
+     <div class="tiny icon ui buttons">
+      <div class="ui button"><i class="user left icon"></i></div>
+      <div class="ui button"><i class="mail center icon"></i></div>
+      <div class="ui button"><i class="tasks right icon"></i></div>
+      
+    </div>
+  </div>
+</div>
+<div class="item" style="
+min-height: 200px;
+">
+<div class="content">
+  <div class="meta">Phase 1</div>
+  <div class="name">Sara Morgan</div>
+  <div class="description">At work </div>
+</div>
+<div class="extra">
+ <div class="tiny icon ui buttons">
+  <div class="ui button"><i class="user left icon"></i></div>
+  <div class="ui button"><i class="mail center icon"></i></div>
+  <div class="ui button"><i class="tasks right icon"></i></div>
+  
+</div>
+</div>
+</div>
+<div class="item" style="
+min-height: 200px;
+">
+<div class="content">
+  <div class="meta">Phase 1</div>
+  <div class="name">Sara Morgan</div>
+  <div class="description">At work </div>
+</div>
+<div class="extra">
+ <div class="tiny icon ui buttons">
+  <div class="ui button"><i class="user left icon"></i></div>
+  <div class="ui button"><i class="mail center icon"></i></div>
+  <div class="ui button"><i class="tasks right icon"></i></div>
+  
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+<!-- ############ Pacinet LIST VIEW ############ -->
+
+
+<!-- ############ DOCTOR VIEW ############ -->
+
+
+  <div class="ui relaxed stackable grid">
+    <div class="ui divider"></div>
+  </div>
+
+
+
+<!-- ############ PACIENT VIEW ############ -->
+<div class="ui relaxed stackable grid">
+  <div class="eight wide middle column">
+  </div>
+  <div class="eight wide right column">
+
+
+
+    <!-- ############ TIMELINE ############ -->
+    <div id="timeline">
+      <div class="ui timeline">
+
+
+        <div class="status event">
+
+          <div class="positive marker" data-content="Dec 11, 2010">
+            <i class="circular sketchy icon white circular sketchy icon shop"></i>
+          </div>
+          <h2 class="positive ui teal header">
+            On Sale!
+            <br>
+          </h2>
+          <span class="sub header">Dec 11, 2010 </span>
+
+        </div>
+
+
+
+        <div class="milestone event">
+          <div class="marker" data-content="Dec 11, 2010">
+            <i class="sketchy icon circular checkmark"></i>
+          </div>
+          <h2 class="ui header top">
+            Sales Begin
+          </h2>
+        </div>
+
+
+
+
+        <a name="tooling" class="anchor"></a>
+
+        <div class="milestone event">
+          <div class="marker" data-content="Dec 11, 2010">
+            <i class="sketchy icon circular checkmark"></i>
+          </div>
+          <h2 class="ui header top">
+            Tooling and Prototyping
+            <span class="help" data-title="Tooling and Prototyping" data-content="We're working on getting manufacturing just right. We're getting the tools ready to build the product, making sure that there are no kinks or delays and that we will be ready to produce the product at scale. ">
+              <i class="icon sketchy circle question"></i>
+            </span>
+          </h2>
+
+
+        </div>
+
+
+
+
+
+        <a name="project-108" class="anchor"></a>
+        
+        <div class="ui teal ribbon label">Phase 1 - 01-02-2014 </div>
+        <a name="project-105" class="anchor"></a>
+        <div class="design project  event">
+          <div class="marker" data-content="Sep 18, 2009">
+            <i class="icon sketchy phase design circular"></i>
+          </div>
+          <h2 class="top cont-toggle attached name">
+            <i class="icon triangle teal down"></i> 
+            Design Project
+            <span class="help" data-title="Design Project" data-content="We've come up with a few possible ways to proceed with development. We're asking you for comments and feedback on possible designs for this product.">
+              <i class="sketchy icon question circle"></i>
+            </span>
+          </h2>
+          <div class="bottom attached partitioned ui shadowless basic segment no-padding">
+
+            <div class="phase two item ui secondary pointing menu">
+              <div class="item red tab-controller active" data-tab="design-Design-|-Form-winners">
+                Winner
+              </div>
+              <div class="item red tab-controller" data-tab="design-Design-|-Form-top">
+                Community Picks
+              </div>
+            </div>
+            <div class="ui simple tab active" data-tab="design-Design-|-Form-winners">
+              <div class="ui two column grid entries">
+
+
+                <div class="row">
+
+                  <div class="ui column winning-ideation">
+                    <div class="ui segment">
+                      <div class="submission">
+                        <a href="/ideations/7269">
+                          <img class="ui image" src="http://s3.amazonaws.com/kore/production/attachments/assets/1362/five25/Cordies-2.jpg?1252988335">
+                        </a>
+                      </div>
+                      <div class="info">
+                        <h4>Spiral form cable weight concept</h4>
+
+                        <a href="/user-1532">
+                          <div class="user">
+                            <span>:) </span>
+                          </div>
+                        </a>
+
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+
+
+              </div>
+            </div>
+            <div class="ui simple tab" data-tab="design-Design-|-Form-top">
+              <table class="ui table segment vote">
+                <thead>
+                  <tr>
+                    <th class="rank">Rank</th>
+                    <th class="votes">Votes</th>
+                    <th class="submission">Submission</th>
+                    <th class="submitted">Submitted By</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1st</td>
+                    <td>58 Votes</td>
+                    <td>
+                      <div class="caption">
+                        <a href="/ideations/7269">
+                          <img class="ui image fifty" src="http://s3.amazonaws.com/kore/production/attachments/assets/1362/icon/Cordies-2.jpg?1252988335">
+                          <span class="caption-text">Spiral form cable weight concept</span>
+                        </a>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="user">
+                        <a href="/user-1532" data-id="1532">
+                          <span class="caption-text username">:) </span>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2nd</td>
+                    <td>30 Votes</td>
+                    <td>
+                      <div class="caption">
+                        <a href="/ideations/7267">
+                          <img class="ui image fifty" src="http://s3.amazonaws.com/kore/production/attachments/assets/1360/icon/Cordies-5.jpg?1252988176">
+                          <span class="caption-text">Tube cable weight concept</span>
+                        </a>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="user">
+                        <a href="/user-1532" data-id="1532">
+                          <span class="caption-text username">:) </span>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3rd</td>
+                    <td>27 Votes</td>
+                    <td>
+                      <div class="caption">
+                        <a href="/ideations/7382">
+                          <img class="ui image fifty" src="http://s3.amazonaws.com/kore/production/attachments/assets/1389/icon/cordies_render.jpg?1253056514">
+                          <span class="caption-text">Cordies (People) 2</span>
+                        </a>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="user">
+                        <a href="/simon-lyons" data-id="3154">
+                          <img class="ui circular image" src="http://s3.amazonaws.com/kore/production/profiles/avatars/3154/three6/twitter_pic.jpg"> 
+                          <span class="caption-text username">Simon Lyons</span>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4th</td>
+                    <td>23 Votes</td>
+                    <td>
+                      <div class="caption">
+                        <a href="/ideations/7264">
+                          <img class="ui image fifty" src="http://s3.amazonaws.com/kore/production/attachments/assets/1357/icon/Cordies-6.jpg?1252987843">
+                          <span class="caption-text">Magnetic cable weight concept</span>
+                        </a>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="user">
+                        <a href="/user-1532" data-id="1532">
+                          <span class="caption-text username">:) </span>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5th</td>
+                    <td>21 Votes</td>
+                    <td>
+                      <div class="caption">
+                        <a href="/ideations/7276">
+                          <img class="ui image fifty" src="http://s3.amazonaws.com/kore/production/attachments/assets/1369/icon/DesignSheet.jpg?1253022610">
+                          <span class="caption-text">Helping Hand</span>
+                        </a>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="user">
+                        <a href="/jon-richards" data-id="5809">
+                          <img class="ui circular image" src="http://s3.amazonaws.com/kore/production/profiles/avatars/5809/three6/2009_01_Logo.jpg"> 
+                          <span class="caption-text username">Jon Richards</span>
+                        </a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+            <div class="overview">
+              58 members participated and earned $44,473.
+              <a class="ui button" href="http://www.quirky.com/projects/105-Cordies-Classic-design-form">
+                View All Submissions
+              </a>
+            </div>
+
+
+          </div>
+        </div>
+
+        <a name="project-84" class="anchor"></a>
+        
+
+        <a name="project-81" class="anchor"></a>
+
+
+        <a name="project-79" class="anchor"></a>
+
+
+
+
+        <div class="evaluation event">
+          <div class="marker" data-content="Sep 02, 2009">
+            <i class="icon circular sketchy eval"></i>
+          </div>
+          <h2 class="top attached name cont-toggle">
+            <i class="icon down triangle teal"></i> 
+            <span>Quirky Product Evaluation</span>
+            <span class="help" data-title="Product Evaluation" data-content="Product Evaluation is the weekly meetup where Quirky Staff, guests, and the community at large look through the top ideas submitted through quirky.com during the week to decide what inventions should become Quirky products.">
+              <i class="sketchy link icon question circle"></i>
+            </span>
+          </h2>
+          <div class="bottom attached no-padding basic shadowless partitioned ui segment">
+            <div class="overview ui segment">
+              <div class="content">
+                <p>On <b>Sep 02, 2009</b> staff and community members joined together at Quirky HQ in New York to select <b>Cordies</b> to become a Quirky Invention. 
+                </p>
+                <a href="/live/" class="ui button">Learn more about eval</a>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="ideation event">
+          <div class="marker" data-content="Idea Submitted: Aug 24, 2009">
+            <i class="icon circular sketchy invent"></i> 
+          </div>
+          <h2 class="top cont-toggle attached name">
+            <i class="icon down triangle teal"></i> 
+            <span>Idea Submission</span>
+            <span class="help" data-title="Idea Submissions" data-content="Every Quirky product begins as an idea from a community member like you. This is the original idea as submitted to our website.">
+              <i class="sketchy link icon question circle"></i>
+            </span>
+          </h2>
+          <div class="bottom no-padding attached ui segment shadowless basic">
+            <a class="ui idea card" data-votes="150" href="/ideations/4792">
+              <div class="idea">
+                <div class="ui corner vote label">
+                  <i class="icon sketchy checkmark"></i>
+                </div>
+                <div class="image">
+                  <img src="http://s3.amazonaws.com/kore/production/attachments/assets/933/one95/weight1.jpg?1249331174">
+                </div>
+                <div class="header">
+                  Cordies
+                </div>
+                <div class="description">
+                  Cable Weights 
+                </div>
+              </div>
+              <div class="meta">
+                -1 members received influence for voting on this idea.
+              </div>
+              <div class="ui bottom teal attached progress">
+                <div class="bar" style="width: 100%;"></div>
+              </div>
+
+            </a>
+
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+    <!-- ############ TIMELINE ############ -->
+  </div>
+</div>
+</div>
+
+
+<div class="ui dimmer page hidden">
+
+  <!-- ############ TEST FORM ############ -->
+  <div class="ui test modal transition hidden">
+    <i class="close icon"></i>
+    <div class="header">
+      Profile Picture
+    </div>
+    <div class="content">
+      <div class="left">
+        <img class="rounded ui small image" src="http://semantic-ui.com/images/demo/photo2.jpg">
+      </div>
+      <div class="right">
+        <div class="ui header">ARE YOU REALLY HAPPY NOW?</div>
+        <p>I mean it's not really the best profile photo.</p>
+        <p>It's resampled to like two times the size it's suppose to be. Our image detection software also says it might even be inappropriate.</p>
+      </div>
+    </div>
+    <div class="actions">
+      <div class="ui black button">
+        Cancel
+      </div>
+      <div class="ui positive right labeled icon button">
+        Add Photo
+        <i class="checkmark icon"></i>
+      </div>
+    </div>
+  </div>
+ <!-- ############ TEST FORM ############ -->
+
+
+  <!-- ############ ADD ACTIVITY FORM ############ -->
+  <div id="addActivity" class="ui modal transition hidden">
+    <div class="ui error form segment hidden">
+
+        <div class="field">
+          <label>Pacient</label> 
+          <div id="pacientdropdown" class="ui selection dropdown">
+            <input type="hidden" name="doctor">
+            <div class="default text">Select Pacient</div>
+            <i class="dropdown icon"></i>
+            <div class="menu ui transition hidden">
+                <div class="item" data-value="demian">Demian L.</div>
+                <div class="item" data-value="medicine">l</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Type</label> 
+          <div id="typedropdown" class="ui selection dropdown">
+            <input type="hidden" name="doctor">
+            <div class="default text">Type</div>
+            <i class="dropdown icon"></i>
+            <div class="menu ui transition hidden">
+                <div class="item" data-value="medicaltreatment">Medical Treatment</div>
+                <div class="item" data-value="medicine">Medicine</div>
+                <div class="item" data-value="transport">Transport</div>
+            </div>
+          </div>
+        </div>
+
+      <div class="medicaltreatment_box">
+          <div class="two fields">
+            <div class="field">
+              <label>Date</label>
+              <input class="timepicker" placeholder="Date" type="text">
+            </div> 
+            <div class="field">
+              <label>Time</label>
+              <input class="datepicker" placeholder="Time" type="text">
+            </div> 
+          </div> 
+          <div class="field">
+            <label>Title</label>
+            <input placeholder="Treatment Title" type="text">
+          </div> 
+          <div class="field">
+            <label>Description</label>
+            <input placeholder="" type="text">
+          </div> 
+          <div class="field">
+            <label>Location</label>
+            <input placeholder="" type="text">
+          </div> 
+          <div class="field">
+            <label>Requisites</label>
+            <input placeholder="All pacient need to know before Medical Treatment." type="text">
+          </div> 
+      </div>
+
+       <div class="medicine_box">
+          <div class="field">
+            <label>Date/Time</label>
+            <input placeholder="Date/Time [CONTROL]" type="text">
+          </div> 
+          <div class="field">
+            <label>Title</label>
+            <input placeholder="Treatment Title" type="text">
+          </div> 
+          <div class="field">
+            <label>Description</label>
+            <input placeholder="" type="text">
+          </div> 
+          <div class="field">
+            <label>Requisites</label>
+            <input placeholder="All pacient need to know before Medical Treatment." type="text">
+          </div> 
+      </div>       
+
+
+       <div class="transport_box">
+          <div class="field">
+            <label>Date/Time</label>
+            <input placeholder="Date/Time [CONTROL]" type="text">
+          </div> 
+          <div class="field">
+            <label>PickUp From</label>
+            <input placeholder="Location" type="text">
+          </div> 
+      </div>     
+
+
+      <div class="ui positive submit button">Add Activity</div>
+    </div>
+
+  </div>
+  <!-- ############ ADD ACTIVITY FORM ############ -->
+
+  <!-- ############ PACIENT VIEW ############ -->
+
+
+</div>
+
+<script src="main.js"></script>
+</body>
+
+</html>
