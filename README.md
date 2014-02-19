@@ -1,7 +1,7 @@
 Clinical Trial App
 ==========
 
-This is a POC (Node.js+Swig Engine+Javascript) project, mobile first, this app help patients to engage in clinical trials.
+This is a POC (Node.js+Swig Engine+Javascript) project, mobile first, this app help patients to engage in clinical trials. here is a [demo](http://matiasurbano-clinical.jit.su/)
 
 Background
 -----
