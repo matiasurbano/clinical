@@ -7,3 +7,4 @@ Background
 -----
 Using the Health IT movement as a launching pad, developers can help transform the clinical trial experience for patients by using software to improve patient education, communication, scheduling, medication adherence and more! 
 
+ 
