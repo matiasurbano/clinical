@@ -1,13 +1,9 @@
-Blog project for M101JS
+Clinical Trial App
+==========
 
-./app.js - entry point
-./package.json - npm package description
-./posts.js - Posts Data Access Helper
-./sessions.js - Sessions Data Access Helper
-./users.js - Users Data Access Helper
-./views/ - html templates
+This is a POC (Node.js+Swig Engine+Javascript) project, mobile first, this app help patients to engage in clinical trials.
 
-Getting started
+Background
+-----
+Using the Health IT movement as a launching pad, developers can help transform the clinical trial experience for patients by using software to improve patient education, communication, scheduling, medication adherence and more! 
 
-npm install
-node app.js
