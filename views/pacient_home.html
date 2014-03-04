@@ -46,6 +46,8 @@
                             <div class="item"><i class="meh icon"></i>Tired</div>
                             <div class="item"><i class="frown icon"></i>Sad</div>
                             <div class="item"><i class="thumbs down icon"></i>Depressed</div>
+                            <div class="item"><i class="bullseye down icon"></i>Calm</div>
+                            <div class="item"><i class="question down icon"></i>Confused</div>
                         </div>
                     </div>
                   </div>
@@ -138,6 +140,7 @@
                         <strong class="ui header top">
                             {{ activity.title }}
                         </strong>
+
                         <div class="bottom attached no-padding basic shadowless partitioned ui segment">
                             <div class="overview ui segment">
                                 <div class="content">
@@ -147,7 +150,15 @@
                                     <p> <strong>Requisites:</strong>
                                         {{ activity.requisites }}
                                     </p>
-                                    <a href="/activities/done/{{activity._id}}" class="ui button">Mark DONE</a>
+
+                                    {% if (activity.activity_type === "transport") %}
+                                        <p> <strong>Location:</strong>
+                                            {{ activity.Location }}
+                                        </p>
+                                        <p> <strong>Pick Up From:</strong>
+                                            {{ activity.pickupfrom }}
+                                        </p>
+                                    {% endif %}
                                 </div>
                             </div>
 

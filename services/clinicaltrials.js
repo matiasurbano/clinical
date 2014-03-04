@@ -1,7 +1,7 @@
 "use strict";
 
 var bcrypt = require('bcrypt-nodejs'),
-    _ = require('underscore');
+    _ = require('lodash');
 
 
 module.exports = function(db){

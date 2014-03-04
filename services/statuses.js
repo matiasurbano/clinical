@@ -1,10 +1,13 @@
 "use strict";
 
-var _ = require('underscore');
+var _ = require('lodash');
 
 
 module.exports = function(db){
 
+    var today = new Date();
+    var nextweek = new Date();
+    nextweek.setDate(today.getDate()+1);
 
     this.validFields = ['status', 'symptom','date', 'description','username'];
     this.initData = [
@@ -12,84 +15,84 @@ module.exports = function(db){
             "username" : "mhart",
             "status": "tired",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Feb 02 2014 08:35 AM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },     
         {
             "username" : "mhart",
             "status": "tired",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Feb 03 2014 10:15 AM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },
         {
             "username" : "mhart",
             "status": "sad",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Feb 06 2014 4:25 PM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },
         {
             "username" : "mhart",
             "status": "sad",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Feb 08 2014 6:05 PM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },
         {
             "username" : "mhart",
             "status": "happy",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Feb 20 2014 10:05 AM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },
         {
             "username" : "mhart",
             "status": "tired",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Feb 25 2014 11:00 AM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },
         {
             "username" : "mhart",
             "status": "tired",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Mar 03 2014 09:35 AM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },     
         {
             "username" : "mhart",
             "status": "tired",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Mar 05 2014 10:35 AM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },
         {
             "username" : "mhart",
             "status": "sad",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Mar 06 2014 2:25 PM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },
         {
             "username" : "mhart",
             "status": "sad",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Mar 09 2014 8:05 PM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },
         {
             "username" : "mhart",
             "status": "happy",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Mar 22 2014 11:05 PM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         },
         {
             "username" : "mhart",
             "status": "tired",
             "symptom" : "Numbness or tingling in hands",
-            "date":  new Date('Mar 28 2014 12:35 AM'),
+            "date":  new Date(nextweek),
             "description": 'This is a commet for my status..'
         }
     ];
@@ -113,6 +116,7 @@ module.exports = function(db){
             callback(err,statuses);
         });
     };
+
 
     this.addStatus = function(msgData, callback) {
 

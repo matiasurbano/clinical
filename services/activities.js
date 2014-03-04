@@ -1,8 +1,12 @@
 "use strict";
 
-var _ = require('underscore');
+var _ = require('lodash');
 
 module.exports = function(db){
+
+    var today = new Date();
+    var nextweek = new Date();
+    nextweek.setDate(today.getDate()+1);
 
     this.validFields = ['pacient','activity_type','date', 'time','title', 'description', 
                         'location', 'requisites','pickupfrom',
@@ -13,12 +17,12 @@ module.exports = function(db){
         {
                 "pacient" : "mhart",
                 "activity_type" : "medicine",
-                "date" : new Date("2014-02-10T03:00:00Z"),
+                "date" : new Date(nextweek),
                 "time" : "8:30 AM",
-                "title" : "Black Pills",
-                "description" : "Some Description",
+                "title" : "Take Black Pills",
+                "description" : "Doctor description",
                 "location" : "",
-                "requisites" : "Some Requiremetn",
+                "requisites" : "After breakfast",
                 "pickupfrom" : "",
                 "weeklyrepeat" : null,
                 "duedate" : "",
@@ -33,12 +37,12 @@ module.exports = function(db){
         {
                 "pacient" : "mhart",
                 "activity_type" : "medicine",
-                "date" : new Date("2014-02-12T03:00:00Z"),
+                "date" : new Date(nextweek),
                 "time" : "8:30 AM",
-                "title" : "Nebolizaciones",
-                "description" : "Desc Nebolizaciones",
+                "title" : "Blood Pressure Test",
+                "description" : "A little description of how to do the test.",
                 "location" : "",
-                "requisites" : "Req Nebolizaciones",
+                "requisites" : "Nurse is required",
                 "pickupfrom" : "",
                 "weeklyrepeat" : null,
                 "duedate" : "",
@@ -53,13 +57,13 @@ module.exports = function(db){
         {
                 "pacient" : "mhart",
                 "activity_type" : "transport",
-                "date" : new Date("2014-02-11T03:00:00Z"),
+                "date" : new Date(nextweek),
                 "time" : "12:00 PM",
                 "title" : "Taxi to Doctor",
-                "description" : "Desc Taxi to Doctor",
+                "description" : "Taxi to Doctor",
                 "location" : "",
                 "requisites" : "",
-                "pickupfrom" : "You home",
+                "pickupfrom" : "1457 Mark Av",
                 "weeklyrepeat" : null,
                 "duedate" : "",
                 "week_sunday" : null,
@@ -73,13 +77,33 @@ module.exports = function(db){
         {
                 "pacient" : "mhart",
                 "activity_type" : "transport",
-                "date" : new Date("2014-02-10T03:00:00Z"),
+                "date" : new Date(nextweek),
                 "time" : "9:15 AM",
-                "title" : "Taxi to Hospital A",
-                "description" : "Desc Taxi to Hospital A",
+                "title" : "Taxi to Hospital Arch",
+                "description" : "A description about the transport.",
                 "location" : "",
                 "requisites" : "",
-                "pickupfrom" : "Home",
+                "pickupfrom" : "1205 Madison Av",
+                "weeklyrepeat" : null,
+                "duedate" : "",
+                "week_sunday" : null,
+                "week_monday" : null,
+                "week_tuesday" : null,
+                "week_wednesday" : null,
+                "week_thursday" : null,
+                "week_friday" : null,
+                "week_saturday" : null
+        },
+        {
+                "pacient" : "mhart",
+                "activity_type" : "transport",
+                "date" : new Date(nextweek),
+                "time" : "16:15 AM",
+                "title" : "Taxi to Hospital Arch",
+                "description" : "A description about the transport.",
+                "location" : "",
+                "requisites" : "",
+                "pickupfrom" : "2355 Blecker St",
                 "weeklyrepeat" : null,
                 "duedate" : "",
                 "week_sunday" : null,

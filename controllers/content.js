@@ -11,6 +11,11 @@ module.exports = function(db){
 
     this.displayMainPage = function(req, res, next) {
 
+        // verify if database exists, if not create sample data.
+        var InitData = require('../docs/initialData'),
+            initData = new InitData(db);
+        initData.verifyData();
+
         return res.render('welcome', {
             username: req.username
         });

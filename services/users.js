@@ -1,8 +1,7 @@
 "use strict";
 
-var _ = require('underscore'),
+var _ = require('lodash'),
     bcrypt = require('bcrypt-nodejs'),
-    gravatar = require('gravatar'),
     http = require('http');
 
 
@@ -104,27 +103,6 @@ module.exports = function(db){
     };
 
 
-    function setProfileAvatar(email,options,callback){
-
-        var profile_url = gravatar.url(email, options);
-        if (profile_url){
-
-         http.get(profile_url, function(res){
-
-                res.on('data', function (chunk){
-                    var strdata = chunk.toString();
-
-                    if (strdata.indexOf("404") == 0)
-                       callback('/img/default-avatar.png');
-                    else
-                        callback(profile_url);
-                });
-
-          });
-        }
-    };
-
-
     this.addUser = function(user, callback) {
 
         // Generate password hash
@@ -152,24 +130,6 @@ module.exports = function(db){
 
             return callback(err, null);
         });
-
-        //// Avatar Disabled
-        // setProfileAvatar(user.email,{s: '100', r: 'pg', d: '404'},function(url){
-        //     if (url){
-        //         user.profile_img = url;
-                
-        //         users.insert(user, function (err, result) {
-
-        //             if (!err) {
-        //                 console.log("Inserted new user");
-        //                 return callback(null, result[0]);
-        //             }
-
-        //             return callback(err, null);
-        //         });
-        //     }
-        // });
-
 
     };
 

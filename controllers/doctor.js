@@ -1,9 +1,11 @@
 "use strict";
 
+var _ = require('lodash');
 
 var UserService = require('../services/users');
 var MessagesService = require('../services/messages');
 var ActivityService = require('../services/activities');
+var StatusesService = require('../services/statuses');
     
     
 
@@ -11,7 +13,9 @@ module.exports = function(db){
     
     var users = new UserService(db),
         messages =  new MessagesService(db),
-        activities = new ActivityService(db);
+        activities = new ActivityService(db),
+        statuses = new StatusesService(db);
+
 
 
     this.displayDoctorHome = function(req, res, next) {
@@ -27,11 +31,11 @@ module.exports = function(db){
             // get all pacients related to the doctor.
             users.getUsers({'doctor':doctor.username},function(err,pacients){
 
-            	return res.render("doctor_home", {
-            		title : 'Doctor Home',
-        			doctor: doctor,
-                    pacients: pacients
-        		});
+                    return res.render("doctor_home", {
+                        title : 'Doctor Home',
+                        doctor: doctor,
+                        pacients: pacients
+                    });
             });
         });
     };
@@ -90,7 +94,7 @@ module.exports = function(db){
 
                 messages.getMessages(msgCond,function(err,msgs){
 
-                return res.render("doctor_messages", {
+                return res.render("doctor_messanges", {
                     title : 'Messages',
                     doctor: user,
                     messages: msgs,

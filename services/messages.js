@@ -1,30 +1,47 @@
 "use strict";
 
-var _ = require('underscore');
+var _ = require('lodash');
 
 
 module.exports = function(db){
+
+    var today = new Date();
+    var nextweek = new Date();
+    nextweek.setDate(today.getDate()+1);
 
     this.validFields = ['from', 'to','message', 'date'];
     this.initData = [
         {
             "from": "rwalker",
             "to" : "mhart",
-            "date":  new Date('Jan 24 2014'),
+            "date":  new Date(nextweek),
             "message": 'Hi Hart, I would like to know how to ...'
         },
         {
             "from": "mhart",
             "to" : "rwalker",
-            "date":  new Date('Jan 25 2014'),
+            "date":  new Date(nextweek),
             "message": 'Hi Doctor, Thanks for your message, I will do that.'
         },
         {
             "from": "rwalker",
             "to" : "mhart",
-            "date":  new Date('Jan 27 2014'),
-            "message": 'Message 2 from Richard Walker.'
+            "date":  new Date(nextweek),
+            "message": 'Tell me how are you today?'
+        },
+        {
+            "from": "mhart",
+            "to" : "rwalker",
+            "date":  new Date(nextweek),
+            "message": 'Message from Patient to Richard.'
+        },
+        {
+            "from": "rwalker",
+            "to" : "mhart",
+            "date":  new Date(nextweek),
+            "message": 'Message from Richard to Patient.'
         }
+
     ];
 
     var messages = db.collection("messages");
