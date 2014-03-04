@@ -24,8 +24,25 @@ module.exports = function(db){
 	   	var MessageService = require('../services/messages'),
 	    	messageService = new MessageService(db);
 
-	   	//activities.remove({},function(err,res){});
-	   	//statuses.remove({},function(err,res){});
+	   	activities.remove({},function(err,res){
+			if (!err) console.log('Activities DELETE..');
+		    activityService.initActivities(function(err,res){
+				if (!err){
+					console.log('Initial data - Activities Inserting..');
+				}
+		    });
+	   	});
+	   	statuses.remove({},function(err,res){
+			if (!err) console.log('Statuses DELETE..');
+	   	});
+	   	messages.remove({},function(err,res){
+			if (!err) console.log('Messages DELETE..');
+		    messageService.initMessages(function(err,res){
+	    		if (!err){
+					console.log('Initial data - Messages Inserting..');
+	    		}
+		    });
+	   	});
 
 	    userService.verifyUser('rwalker',function(err,user){
 	        if (err) console.log('ERROR: ' + err);
@@ -39,13 +56,6 @@ module.exports = function(db){
 	        }else{
 	        	console.log('Initial data - USERS OK');
 	        }
-	    });
-
-
-	    activityService.initActivities(function(err,res){
-			if (!err){
-				console.log('Initial data - Activities Inserting..');
-			}
 	    });
 
 
@@ -63,11 +73,9 @@ module.exports = function(db){
 	        }
 	    });
 
-	    messageService.initMessages(function(err,res){
-    		if (!err){
-				console.log('Initial data - Messages Inserting..');
-    		}
-	    });
+
+
+
 
 
     };
