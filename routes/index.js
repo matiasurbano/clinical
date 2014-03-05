@@ -26,18 +26,6 @@ module.exports = function(app, db){
     // The main page of the blog
     app.get('/', contentController.displayMainPage);
 
-    // The main page of the blog, filtered by tag
-    app.get('/tag/:tag', contentController.displayMainPageByTag);
-
-    // A single post, which can be commented on
-    app.get("/post/:permalink", contentController.displayPostByPermalink);
-    app.post('/newcomment', contentController.handleNewComment);
-    app.get("/post_not_found", contentController.displayPostNotFound);
-
-    // Displays the form allowing a user to add a new post. Only works for logged in users
-    app.get('/newpost', contentController.displayNewPostPage);
-    app.post('/newpost', contentController.handleNewPost);
-
     // Login form
     app.get('/login', sessionController.displayLoginPage);
     app.post('/login', sessionController.handleLoginRequest);
