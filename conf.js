@@ -5,7 +5,7 @@ var _   = require('lodash');
 module.exports = function(){
 
     var config = {
-      "defaults":{
+      "local":{
         PORT:3000,
         MONGODB_URL:"mongodb://localhost:27017/clinical"
       },
@@ -21,7 +21,7 @@ module.exports = function(){
         if (env===undefined) throw new Error("Enviroment setting should be set.");
         
         var conf = {};      
-        conf = _.defaults(config[env],config.defaults);
+        conf = _.defaults(config[env],config.local);
         conf = _.extend(conf, settings); // overloading defaults settings
         return conf;
     };

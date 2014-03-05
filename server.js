@@ -7,7 +7,7 @@
         MongoClient = require('mongodb').MongoClient,
         routes = require('./routes');
 
-var config = new Conf().load("dev",{ PORT : 3003 });
+var config = new Conf().load("local",{ PORT : 3003 });
 console.log(config);
 
 
